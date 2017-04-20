@@ -29,7 +29,7 @@ int calculate_result(int white_balls[5], int power_ball)
 int main(int argc, char * * argv) {
     int balls[6];
  		int count_balls = 0;
- 		int favorite = 0; // this should be a bool
+ 		int favourite = 0; // this should be a bool
 
  		for (int i=1; i<argc; i++)
 		 {
@@ -50,8 +50,8 @@ int main(int argc, char * * argv) {
       const char * arg = argv[i];
 
       if ('-' == arg[0]) {
-        if (0 == strcmp(arg, "-favorite")) {
-          favorite = 1;
+        if (0 == strcmp(arg, "-favourite")) {
+          favourite = 1;
         } else {
           goto usage_error;
         }
@@ -76,14 +76,14 @@ int main(int argc, char * * argv) {
     if (LUCKY_NUMBER == power_ball) {
       result = result * 2;
     }
-    if (favorite) {
+    if (favourite) {
       result = result * 2;
     }
 
     printf("%d percent chance of winning\n", result);
     return 0;
     usage_error:
-      fprintf(stderr, "Usage: %s [-favorite] (5 white balls)
+      fprintf(stderr, "Usage: %s [-favourite] (5 white balls)
         power_ball\n ", argv[0]);
         return -1;
       }
