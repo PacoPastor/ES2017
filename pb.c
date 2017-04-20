@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include <stdbool.h>
 
 
 
@@ -30,7 +29,7 @@ int calculate_result(int white_balls[5], int power_ball)
 int main(int argc, char * * argv) {
     int balls[6];
  		int count_balls = 0;
- 		bool favorite = false; // this should be a bool
+ 		int favorite = 0; // this should be a bool
 
  		for (int i=1; i<argc; i++)
 		 {
