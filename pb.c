@@ -3,7 +3,16 @@
 #include <stdbool.h>
 #include <string.h>
 
-
+void checkwhiteballs(int balls[5], int control)
+{
+ int last = balls[control];
+ for (int i = 0; i < control; i++){
+ if (last == balls[i]){
+ balls[control] = whiteballs_computer_generated();
+ break;
+ }
+ }
+}
 
 int calculate_result(int white_balls[5], int power_ball)
 {
@@ -67,7 +76,10 @@ int main(int argc, char * * argv) {
       }
     }
     if (6 != count_balls) {
-      goto usage_error;
+      for (int i = 0; i < 5; i++){
+	balls[i] = whiteballs_computer_generated();
+	checkwhiteballs(balls, i);
+      }
     }
 
     int power_ball = balls[5];
