@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-
+#define var1 59
+#define var2 39
 
 void checkwhiteballs(int balls[5], int control)
 {
@@ -16,12 +17,12 @@ void checkwhiteballs(int balls[5], int control)
 
 int white_balls_computer_generated()
 {
-	return rand()%59+1;
+	return rand()%var1+1;
 }
 
 int powerball_computer_generated()
 {
-	return rand()%39+1;
+	return rand()%var2+1;
 }
 
 int calculate_result(int white_balls[5], int power_ball)
