@@ -31,6 +31,10 @@ int powerball_computer_generated()
 }
 
 
+int balls[6];
+int power_ball;
+int result;
+
 int calculate_result(int white_balls[5], int power_ball)
 {
    qsort(white_balls, 5, sizeof(int), my_sort_func); 
@@ -54,6 +58,12 @@ void showing_results(int white_balls[5], int power_ball)
 }
 
 void lottery_numbers_simulation()
+{
+   int power_ball = balls[5];
+   int result = calculate_result(balls, power_ball);
+}
+
+void lottery_numbers_simulation(int &balls)
 {
 	//Sort the lottery numbers
    int power_ball = balls[5];
@@ -88,12 +98,14 @@ printf(“\n--- Your lottery numbers ---\n”);
 		 goto usage_error;
 		 }
 		 // the power ball is always the last one given
-
 		 int power_ball = balls[5];
 
 		 lottery_numbers_simulation(balls);
 
 		 int result = calculate_result(balls, power_ball);
+
+		 
+		 //PETECANDER AJAREMORE NAO
 
 		 // calculate result can return -1 if the ball numbers
 		 // are out of range
