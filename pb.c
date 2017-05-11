@@ -9,6 +9,28 @@ int balls[6];
 int power_ball;
 int result;
 
+
+void checkwhiteballs(int balls[5], int control)
+{
+ int last = balls[control];
+ for (int i = 0; i < control; i++){
+ if (last == balls[i]){
+ balls[control] = whiteballs_computer_generated();
+ break;
+ }
+ }
+
+int white_balls_computer_generated()
+{
+	return rand()%var1+1;
+}
+
+int powerball_computer_generated()
+{
+	return rand()%var2+1;
+}
+
+
 int calculate_result(int white_balls[5], int power_ball)
 {
    qsort(white_balls, 5, sizeof(int), my_sort_func); 
