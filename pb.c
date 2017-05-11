@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
@@ -27,24 +27,24 @@ int powerball_computer_generated()
 
 int calculate_result(int white_balls[5], int power_ball)
 {
-  for (int i=0; i<5; i++){
-    if ((white_balls[i] < 1) || (white_balls[i] > MAX_WHITE_BALL))
-      {
-	return -1;
-      }
-    if ((power_ball < 1) || (power_ball > MAX_POWER_BALL))
-      {
-	return -1;
-      }
-  }
+   qsort(white_balls, 5, sizeof(int), my_sort_func); 
+  printf("Your sorted numbers: \
+n"); 
+  for (int i = 0; i < 5; i++){ 
+    printf("%d ", white_balls[i]); 
+  }   
+  printf("The power ball: %d \
+n", power_ball); 
+return 0; 
+ }
   
-  	// lottery ball numbers are always shown sorted
-  	qsort(white_balls, 5, sizeof(int), my_sort_func);
-  
-	// Here should be typed a function to calculate the probability
-	return 0;
-
-
+void showing_results(int white_balls[5], int power_ball)
+{
+ printf("Your sorted numbers: \n");
+ for (int i = 0; i < 5; i++){
+ printf("%d ", white_balls[i]);
+ }
+ printf("The power ball: %d \n", power_ball);
 }
 
 
@@ -124,6 +124,8 @@ int main(int argc, char * * argv) {
     if (favourite) {
       result = result * 2;
     }
+
+    showing_results(balls ,power_ball);
 
     printf("%d percent chance of winning\n", result);
     return 0;
