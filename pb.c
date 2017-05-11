@@ -5,6 +5,7 @@
 #define var1 59
 #define var2 39
 
+<<<<<<< HEAD
 void checkwhiteballs(int balls[5], int control)
 {
  int last = balls[control];
@@ -24,6 +25,11 @@ int powerball_computer_generated()
 {
 	return rand()%var2+1;
 }
+
+
+int balls[6];
+int power_ball;
+int result;
 
 int calculate_result(int white_balls[5], int power_ball)
 {
@@ -47,6 +53,11 @@ void showing_results(int white_balls[5], int power_ball)
  printf("The power ball: %d \n", power_ball);
 }
 
+void lottery_numbers_simulation()
+{
+   int power_ball = balls[5];
+   int result = calculate_result(balls, power_ball);
+}
 
 void lottery_numbers_simulation(int &balls)
 {
@@ -61,7 +72,8 @@ void lottery_numbers_simulation(int &balls)
 
 
 int main(int argc, char * * argv) {
-    int balls[6];
+   
+   		lottery_numbers_simulation();
  		int count_balls = 0;
  		int favorite = 0; // this should be a bool
 
@@ -70,11 +82,17 @@ int main(int argc, char * * argv) {
 		 goto usage_error;
 		 }
 		 // the power ball is always the last one given
+<<<<<<< HEAD
 		 int power_ball = balls[5];
 
 		 lottery_numbers_simulation(balls);
 
 		 int result = calculate_result(balls, power_ball);
+=======
+		 
+		 //PETECANDER AJAREMORE NAO
+		 
+>>>>>>> Función MAGICA de simulación de numeros por el EquipoDoge
 		 // calculate result can return -1 if the ball numbers
 		 // are out of range
 
@@ -125,7 +143,6 @@ int main(int argc, char * * argv) {
       printf(" %d ", balls[i]);
   }
 
-    int power_ball = balls[5];
     int result = calculate_result(balls, power_ball);
     if (result < 0) {
       goto usage_error;
