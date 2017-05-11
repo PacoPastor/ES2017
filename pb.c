@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-<<<<<<< HEAD
+
 void checkwhiteballs(int balls[5], int control)
 {
  int last = balls[control];
@@ -13,7 +13,7 @@ void checkwhiteballs(int balls[5], int control)
  break;
  }
  }
-=======
+
 int white_balls_computer_generated()
 {
 	return rand()%59+1;
@@ -22,7 +22,6 @@ int white_balls_computer_generated()
 int powerball_computer_generated()
 {
 	return rand()%39+1;
->>>>>>> 7520e3eccd5721c76ca4c6c367486addf61ea452
 }
 
 int calculate_result(int white_balls[5], int power_ball)
