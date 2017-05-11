@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 
+<<<<<<< HEAD
 void checkwhiteballs(int balls[5], int control)
 {
  int last = balls[control];
@@ -12,6 +13,16 @@ void checkwhiteballs(int balls[5], int control)
  break;
  }
  }
+=======
+int white_balls_computer_generated()
+{
+	return rand()%59+1;
+}
+
+int powerball_computer_generated()
+{
+	return rand()%39+1;
+>>>>>>> 7520e3eccd5721c76ca4c6c367486addf61ea452
 }
 
 int calculate_result(int white_balls[5], int power_ball)
@@ -76,11 +87,31 @@ int main(int argc, char * * argv) {
       }
     }
     if (6 != count_balls) {
+<<<<<<< HEAD
       for (int i = 0; i < 5; i++){
 	balls[i] = whiteballs_computer_generated();
 	checkwhiteballs(balls, i);
       }
     }
+=======
+      for (int i = 0; i < 5; i++)
+      {
+      	balls[i] = white_balls_computer_generated();
+      }
+
+      balls[5] = powerball_computer_generated(); // Power ball
+
+      printf("Your numbers are: ");
+
+      for (int i = 0; i < 5; i++)
+      {
+      	printf("%d ", balls[i]);
+      }    
+
+      printf("\nAnd the power ball:");
+      printf(" %d ", balls[i]);
+  }
+>>>>>>> 7520e3eccd5721c76ca4c6c367486addf61ea452
 
     int power_ball = balls[5];
     int result = calculate_result(balls, power_ball);
