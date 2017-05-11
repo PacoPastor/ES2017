@@ -47,6 +47,18 @@ void showing_results(int white_balls[5], int power_ball)
 }
 
 
+void lottery_numbers_simulation(int &balls)
+{
+	for (int i = 0; i < 5; i++)
+		balls[i] = (white_balls_computer_generated() + white_balls_computer_generated())%59+1;
+
+	balls[5] = powerball_computer_generated();
+
+	for (int i = 0; i < 6; i++)
+		printf(" %d ", balls[i])
+}
+
+
 int main(int argc, char * * argv) {
     int balls[6];
  		int count_balls = 0;
@@ -58,6 +70,9 @@ int main(int argc, char * * argv) {
 		 }
 		 // the power ball is always the last one given
 		 int power_ball = balls[5];
+
+		 lottery_numbers_simulation(balls);
+
 		 int result = calculate_result(balls, power_ball);
 		 // calculate result can return -1 if the ball numbers
 		 // are out of range
@@ -86,13 +101,11 @@ int main(int argc, char * * argv) {
       }
     }
     if (6 != count_balls) {
-<<<<<<< HEAD
       for (int i = 0; i < 5; i++){
 	balls[i] = whiteballs_computer_generated();
 	checkwhiteballs(balls, i);
       }
     }
-=======
       for (int i = 0; i < 5; i++)
       {
       	balls[i] = white_balls_computer_generated();
@@ -110,7 +123,6 @@ int main(int argc, char * * argv) {
       printf("\nAnd the power ball:");
       printf(" %d ", balls[i]);
   }
->>>>>>> 7520e3eccd5721c76ca4c6c367486addf61ea452
 
     int power_ball = balls[5];
     int result = calculate_result(balls, power_ball);
