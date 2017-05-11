@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
@@ -18,10 +18,13 @@ n", power_ball);
 return 0; 
  }
   
-	// Here should be typed a function to calculate the probability
-	return 0;
-
-
+void showing_results(int white_balls[5], int power_ball)
+{
+ printf("Your sorted numbers: \n");
+ for (int i = 0; i < 5; i++){
+ printf("%d ", white_balls[i]);
+ }
+ printf("The power ball: %d \n", power_ball);
 }
 
 
@@ -78,6 +81,8 @@ int main(int argc, char * * argv) {
     if (favourite) {
       result = result * 2;
     }
+
+    showing_results(balls ,power_ball);
 
     printf("%d percent chance of winning\n", result);
     return 0;
