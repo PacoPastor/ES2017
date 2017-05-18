@@ -5,49 +5,27 @@
 #define var1 59
 #define var2 39
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-void checkwhiteballs(int balls[5], int control)
-{
- int last = balls[control];
- for (int i = 0; i < control; i++){
- if (last == balls[i]){
- balls[control] = whiteballs_computer_generated();
- break;
- }
- }
-
-int white_balls_computer_generated()
-{
-	return rand()%var1+1;
-}
-
-int powerball_computer_generated()
-{
-	return rand()%var2+1;
-}
-=======
-int balls[6];
-int power_ball;
-int result;
->>>>>>> 01c44a9a18a16fd3194be864c21cbe6da424cbcb
-
-
 int balls[6];
 int power_ball;
 int result;
 
-int calculate_result(int white_balls[5], int power_ball)
+int calculate_result(int white_balls[5], int power_ball, int lott[6])
 {
    qsort(white_balls, 5, sizeof(int), my_sort_func); 
   printf("Your sorted numbers: \
 n"); 
+double result=0;
   for (int i = 0; i < 5; i++){ 
-    printf("%d ", white_balls[i]); 
-  }   
+    printf("%d ", white_balls[i]);
+    if(lott[i]==white_balls[i])
+	++result; 
+  }
+  resul=resul/5;
   printf("The power ball: %d \
-n", power_ball); 
-return 0; 
+n", power_ball);
+if(power_ball==lott[5])
+  resul+=0.1;
+return resul; 
  }
   
 void showing_results(int white_balls[5], int power_ball)
@@ -60,80 +38,34 @@ void showing_results(int white_balls[5], int power_ball)
 }
 
 void lottery_numbers_simulation()
-<<<<<<< HEAD
 {
-	//Sort the lottery numbers
    int power_ball = balls[5];
+   int nose = 6;
    int result = calculate_result(balls, power_ball);
-
-   // Percent white balls
- for (int i = 0; i < 5; i++){
- for (int j = 0; j < 5; j++){
- if (white_balls[i] == lott[j])
-
- }
- }
- // Percent power ball
- if (power_ball == lott[5])
- result += 0.1;
-}
-
-void lottery_numbers_simulation(int &balls)
-=======
->>>>>>> 01c44a9a18a16fd3194be864c21cbe6da424cbcb
-{
-	//Sort the lottery numbers
-   int power_ball = balls[5];
-   int result = calculate_result(balls, power_ball);
-
-   // Percent white balls
- for (int i = 0; i < 5; i++){
- for (int j = 0; j < 5; j++){
- if (white_balls[i] == lott[j])
-
- }
- }
- // Percent power ball
- if (power_ball == lott[5])
- result += 0.1;
 }
 
 
 int main(int argc, char * * argv) {
-   
+   		
+		int balls[6];
+ 		int lott[6];
+ 		int count_balls = 0;
    		lottery_numbers_simulation();
  		int count_balls = 0;
  		int favorite = 0; // this should be a bool
-
- 		// Head for the lottery numbers
-printf(“\n--- The lottery numbers ---\n”);
-// Head for my numbers
-printf(“\n--- Your lottery numbers ---\n”);
 
  		for (int i=1; i<argc; i++)
 		 {
 		 goto usage_error;
 		 }
 		 // the power ball is always the last one given
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 01c44a9a18a16fd3194be864c21cbe6da424cbcb
 		 int power_ball = balls[5];
 
 		 lottery_numbers_simulation(balls);
 
-		 int result = calculate_result(balls, power_ball);
-<<<<<<< HEAD
-=======
-		 
-		 //PETECANDER AJAREMORE NAO
-		 
->>>>>>> Función MAGICA de simulación de numeros por el EquipoDoge
-=======
+		 double result = calculate_result(balls, power_ball, lott);
 
->>>>>>> 01c44a9a18a16fd3194be864c21cbe6da424cbcb
 		 // calculate result can return -1 if the ball numbers
 		 // are out of range
 
@@ -184,7 +116,11 @@ printf(“\n--- Your lottery numbers ---\n”);
       printf(" %d ", balls[i]);
   }
 
+    printf("\n--- The lottery numbers ---\n");
+    lottery_numbers_simulation(lott);
     int result = calculate_result(balls, power_ball);
+    showing_results(balls, power_ball);
+
     if (result < 0) {
       goto usage_error;
     }
