@@ -53,10 +53,22 @@ void showing_results(int white_balls[5], int power_ball)
  printf("The power ball: %d \n", power_ball);
 }
 
+//Sort the lottery numbers. 
 void lottery_numbers_simulation()
 {
    int power_ball = balls[5];
    int result = calculate_result(balls, power_ball);
+
+   // Percent white balls
+ for (int i = 0; i < 5; i++){
+ for (int j = 0; j < 5; j++){
+ if (white_balls[i] == lott[j])
+
+ }
+ }
+ // Percent power ball
+ if (power_ball == lott[5])
+ result += 0.1;
 }
 
 void lottery_numbers_simulation(int &balls)
