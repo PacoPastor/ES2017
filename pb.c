@@ -14,12 +14,15 @@ int calculate_result(int white_balls[5], int power_ball, int lott[6])
    qsort(white_balls, 5, sizeof(int), my_sort_func); 
   printf("Your sorted numbers: \
 n"); 
+int result=0;
   for (int i = 0; i < 5; i++){ 
-    printf("%d ", white_balls[i]); 
+    printf("%d ", white_balls[i]);
+    if(lott[i]==white_balls[i])
+	++result; 
   }   
   printf("The power ball: %d \
 n", power_ball); 
-return 0; 
+return resul/5; 
  }
   
 void showing_results(int white_balls[5], int power_ball)
