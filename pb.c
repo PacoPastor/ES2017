@@ -57,9 +57,9 @@ void showing_results(int white_balls[5], int power_ball)
  printf("The power ball: %d \n", power_ball);
 }
 
-//Sort the lottery numbers. 
 void lottery_numbers_simulation()
 {
+	//Sort the lottery numbers
    int power_ball = balls[5];
    int result = calculate_result(balls, power_ball);
 
