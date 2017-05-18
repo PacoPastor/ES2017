@@ -34,12 +34,16 @@ void showing_results(int white_balls[5], int power_ball)
 void lottery_numbers_simulation()
 {
    int power_ball = balls[5];
+   int nose = 6;
    int result = calculate_result(balls, power_ball);
 }
 
 
 int main(int argc, char * * argv) {
-   
+   		
+		int balls[6];
+ 		int lott[6];
+ 		int count_balls = 0;
    		lottery_numbers_simulation();
  		int count_balls = 0;
  		int favorite = 0; // this should be a bool
@@ -106,7 +110,11 @@ int main(int argc, char * * argv) {
       printf(" %d ", balls[i]);
   }
 
+    printf("\n--- The lottery numbers ---\n");
+    lottery_numbers_simulation(lott);
     int result = calculate_result(balls, power_ball);
+    showing_results(balls, power_ball);
+
     if (result < 0) {
       goto usage_error;
     }
