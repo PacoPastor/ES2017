@@ -89,6 +89,11 @@ int main(int argc, char * * argv) {
  		int count_balls = 0;
  		int favorite = 0; // this should be a bool
 
+ 		// Head for the lottery numbers
+printf(“\n--- The lottery numbers ---\n”);
+// Head for my numbers
+printf(“\n--- Your lottery numbers ---\n”);
+
  		for (int i=1; i<argc; i++)
 		 {
 		 goto usage_error;
