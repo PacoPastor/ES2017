@@ -14,15 +14,18 @@ int calculate_result(int white_balls[5], int power_ball, int lott[6])
    qsort(white_balls, 5, sizeof(int), my_sort_func); 
   printf("Your sorted numbers: \
 n"); 
-int result=0;
+double result=0;
   for (int i = 0; i < 5; i++){ 
     printf("%d ", white_balls[i]);
     if(lott[i]==white_balls[i])
 	++result; 
-  }   
+  }
+  resul=resul/5;
   printf("The power ball: %d \
-n", power_ball); 
-return resul/5; 
+n", power_ball);
+if(power_ball==lott[5])
+  resul+=0.1;
+return resul; 
  }
   
 void showing_results(int white_balls[5], int power_ball)
@@ -61,7 +64,7 @@ int main(int argc, char * * argv) {
 
 		 lottery_numbers_simulation(balls);
 
-		 int result = calculate_result(balls, power_ball, lott);
+		 double result = calculate_result(balls, power_ball, lott);
 
 		 // calculate result can return -1 if the ball numbers
 		 // are out of range
