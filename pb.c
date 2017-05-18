@@ -9,7 +9,7 @@ int balls[6];
 int power_ball;
 int result;
 
-int calculate_result(int white_balls[5], int power_ball)
+int calculate_result(int white_balls[5], int power_ball, int lott[6])
 {
    qsort(white_balls, 5, sizeof(int), my_sort_func); 
   printf("Your sorted numbers: \
@@ -58,7 +58,7 @@ int main(int argc, char * * argv) {
 
 		 lottery_numbers_simulation(balls);
 
-		 int result = calculate_result(balls, power_ball);
+		 int result = calculate_result(balls, power_ball, lott);
 
 		 // calculate result can return -1 if the ball numbers
 		 // are out of range
