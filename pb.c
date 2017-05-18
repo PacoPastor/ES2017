@@ -5,9 +5,59 @@
 #define var1 59
 #define var2 39
 
+<<<<<<< HEAD
 int balls[6];
 int power_ball;
 int result;
+=======
+
+void checkwhiteballs(int balls[5], int control)
+{
+ int last = balls[control];
+ for (int i = 0; i < control; i++){
+ if (last == balls[i]){
+ balls[control] = whiteballs_computer_generated();
+ break;
+ }
+ }
+
+int white_balls_computer_generated()
+{
+	return rand()%var1+1;
+}
+
+int powerball_computer_generated()
+{
+	return rand()%var2+1;
+}
+
+
+
+int balls[6];
+int power_ball;
+int result;
+
+
+void checkwhiteballs(int balls[5], int control)
+{
+ int last = balls[control];
+ for (int i = 0; i < control; i++){
+ if (last == balls[i]){
+ balls[control] = whiteballs_computer_generated();
+ break;
+ }
+ }
+
+int white_balls_computer_generated()
+{
+	return rand()%var1+1;
+}
+
+int powerball_computer_generated()
+{
+	return rand()%var2+1;
+}
+>>>>>>> 29c8c68d39dc9d69579ffa3c90889dccf116caf0
 
 int calculate_result(int white_balls[5], int power_ball, int lott[6])
 {
@@ -40,9 +90,69 @@ void showing_results(int white_balls[5], int power_ball)
 }
 
 void lottery_numbers_simulation()
+<<<<<<< HEAD
 {
    int power_ball = balls[5];
    int result = calculate_result(balls, power_ball);
+=======
+
+{
+	//Sort the lottery numbers
+
+   int power_ball = balls[5];
+   int result = calculate_result(balls, power_ball);
+
+   // Percent white balls
+ for (int i = 0; i < 5; i++){
+ for (int j = 0; j < 5; j++){
+ if (white_balls[i] == lott[j])
+
+ }
+ }
+ // Percent power ball
+ if (power_ball == lott[5])
+ result += 0.1;
+}
+
+void lottery_numbers_simulation(int &balls)
+{
+	//Sort the lottery numbers
+
+   int power_ball = balls[5];
+   int result = calculate_result(balls, power_ball);
+
+   // Percent white balls
+ for (int i = 0; i < 5; i++){
+ for (int j = 0; j < 5; j++){
+ if (white_balls[i] == lott[j])
+
+ }
+ }
+ // Percent power ball
+ if (power_ball == lott[5])
+ result += 0.1;
+
+}
+
+void lottery_numbers_simulation(int &balls)
+
+{
+	//Sort the lottery numbers
+   int power_ball = balls[5];
+   int result = calculate_result(balls, power_ball);
+
+   // Percent white balls
+ for (int i = 0; i < 5; i++){
+ for (int j = 0; j < 5; j++){
+ if (white_balls[i] == lott[j])
+
+ }
+ }
+ // Percent power ball
+ if (power_ball == lott[5])
+ result += 0.1;
+
+>>>>>>> 29c8c68d39dc9d69579ffa3c90889dccf116caf0
 }
 
 
